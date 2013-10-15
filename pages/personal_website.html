@@ -1,0 +1,298 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
+        <title>Personal Website</title>
+        <link href="css/personal_website_20131015.css" rel="stylesheet" type="text/css" /> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+          jQuery(document).ready(function(){
+            var name = "";
+            var prevName = "";
+            var imgWidth = -160;
+
+            // This function is to show the options for sorting
+            jQuery('#filter').click(function(){
+              jQuery('#filterOptions').slideToggle();
+            });
+
+            // This will change the color of the hovered option
+            jQuery('.filterOption').hover(function(){
+              jQuery(this).css('background-color', '#808080');											  	
+            },function(){
+              jQuery(this).css('background-color', '#fff');
+            });
+
+            // This is for the navigation menu
+            jQuery('.dropDownOption').hover(function(){	
+              name = jQuery(this).attr('name');									   
+              if (prevName != name) {
+                jQuery('#' + prevName + 'SubMenu').slideUp(); // This will clear or remove the previous menu						   
+              }
+              jQuery('#' + name + 'SubMenu').slideDown(); // This will show the sub menu	
+            },function(){
+              prevName = name;
+            }); 
+
+            jQuery('.subMenu').hover(function(){
+              jQuery(this).css('background-color', '#4ad585');
+              jQuery(this).css('color', '#fff');
+            },function(){
+              jQuery(this).css('background-color', '#fff');
+              jQuery(this).css('color', '#CCC');
+            });
+
+            jQuery('.rightArrow').click(function(){
+              imgWidth = imgWidth - 160;
+              jQuery('.leftArrow').show();
+              jQuery("ul.images").animate({'left':imgWidth + 'px'}, 600);
+              if (imgWidth <= -320) {
+                jQuery('.rightArrow').hide();
+              }
+            });
+
+            jQuery('.leftArrow').click(function(){
+              imgWidth = imgWidth + 160;
+              jQuery('.rightArrow').show();
+              jQuery("ul.images").animate({'left':imgWidth + 'px'}, 600);
+              if (imgWidth >= 0) {
+                jQuery('.leftArrow').hide();
+              }
+            });
+
+          });
+      </script>
+    </head>
+
+    <body>
+      <div id="main"> <!--Start of MAIN DIV-->
+	  
+        <div id="header">  
+          <span class="headerTitle">TURKEY ONLINE RETAIL OPERATIONS</span>
+          <br />
+          <span class="subHeader">PRACTICAL EXAM | FRONT END</span>
+        </div>
+
+        <div class="bodyContainer"> <!--Start of BODY CONTAINER DIV-->
+	  
+          <div id="block_feature">  
+            <ul class="navMenu">
+              <li class="add">&nbsp;</li>
+              <li>Home</li>
+              <li>About</li>
+              <li>Services</li>
+              <li>Portfolio</li>
+              <li>Blog</li>
+              <li>Contact</li>
+              <li class="search">
+                <div id="searchField">
+                  <span class="Text14Italic float-left">Search the website</span>
+                  <div class="searchField"></div>
+                </div>
+              </li>
+            </ul>  
+          </div>
+
+          <div style="height: 15px; width: 100%;">&nbsp;</div>
+
+          <div id="content"> <!--Start of CONTENT DIV-->
+		  
+            <div id="content1"><!--Start of CONTENT1 DIV-->
+
+              <div id="weather" class="float-left"> <!--Start of Weather DIV-->
+                <div class="forecastToday">
+                  <div class="forecastImg float-left"></div>
+                  <div class="float-left" style="top: 17px; position: relative; left: 25px;">
+                    <span class="forecastText">27&deg;</span>
+                    <br />
+                    <span>Mostly Sunny <br /> 27&deg;/15&deg;</span>
+                  </div>
+                </div>
+				
+                <div class="forecastCountry">
+                  <div class="countryLabel float-left">BUCHAREST</div>
+                  <div class="countrySearch float-left">
+                    <div class="searchField"></div>
+                  </div>
+                </div>
+				
+                <div class="weeklyForecast">
+                  <div class="dailyForecast borderRight float-left">
+                    <div class="dailyLabel">SU</div>
+                    <div class="sunny"></div>
+                    <div class="dailytemp">25&deg;</div>
+                  </div>
+                  <div class="dailyForecast borderRight float-left">
+                    <div class="dailyLabel">MO</div>
+                    <div class="rainy"></div>
+                    <div class="dailytemp">27&deg;</div>
+                  </div>
+                  <div class="dailyForecast borderRight float-left">
+                    <div class="dailyLabel">TU</div>
+                    <div class="cloudy"></div>
+                    <div class="dailytemp">20&deg;</div>
+                  </div>
+                  <div class="dailyForecast borderRight float-left">
+                    <div class="dailyLabel">WE</div>
+                    <div class="rainy"></div>
+                    <div class="dailytemp">18&deg;</div>
+                  </div>
+                  <div class="dailyForecast borderRight float-left">
+                    <div class="dailyLabel">TH</div>
+                    <div class="sunny"></div>
+                    <div class="dailytemp">27&deg;</div>
+                  </div>
+                  <div class="dailyForecast borderRight float-left">
+                    <div class="dailyLabel">FR</div>
+                    <div class="cloudy"></div>
+                    <div class="dailytemp">28&deg;</div>
+                  </div>
+                  <div class="dailyForecast float-left">
+                    <div class="dailyLabel">SA</div>
+                    <div class="partlySunny"></div>
+                    <div class="dailytemp">30&deg;</div>
+                  </div>
+                </div>
+              </div> <!--End of Weather DIV-->
+
+              <div class="divSpacer float-left"></div>
+
+              <div class="float-left" id="personalInfo"> <!--Start of PERSONAL INFO DIV-->
+                <div class="paddingTopBottom">
+                  <span class="personalTitle">Jack Daniels</span>
+                  <br />
+                  <span>Engineer</span>
+                  <div class="profileImg">Profile Pic</div>
+                  <span>125 Followers</span>
+                  <div class="follow">
+                    <div class="followImg">FOLLOW</div>
+                  </div>
+                </div>
+              </div> <!--End of PERSONAL INFO DIV-->
+
+              <div class="divSpacer"></div>
+
+              <div class="float-left" id="calendar"> <!--Start of CALENDAR DIV-->
+                <div class="calendarHeading">
+                  <div class="leftCalendar float-left"></div>
+                  <div class="countryLabel float-left" style="top: 23px; position: relative; left: 50px;">
+                    <span>OCTOBER 2013</span>
+                  </div>
+                  <div class="rightCalendar float-left"></div>
+                </div>
+				
+                <div class="monthly">
+                  <div class="daily pastDays">29</div>
+                  <div class="daily pastDays">30</div>
+                  <div class="daily">1</div>
+                  <div class="daily">2</div>
+                  <div class="daily">3</div>
+                  <div class="daily">4</div>
+                  <div class="daily">5</div>
+                  <div class="daily">6</div>
+                  <div class="daily">7</div>
+                  <div class="daily">8</div>
+                  <div class="daily">9</div>
+                  <div class="daily">10</div>
+                  <div class="daily">11</div>
+                  <div class="daily">12</div>
+                  <div class="daily">13</div>
+                  <div class="daily">14</div>
+                  <div class="daily currentDay">15</div>
+                  <div class="daily">16</div>
+                  <div class="daily">17</div>
+                  <div class="daily">18</div>
+                  <div class="daily">19</div>
+                  <div class="daily">20</div>
+                  <div class="daily">21</div>
+                  <div class="daily">22</div>
+                  <div class="daily">23</div>
+                  <div class="daily">24</div>
+                  <div class="daily">25</div>
+                  <div class="daily">26</div>
+                  <div class="daily">27</div>
+                  <div class="daily">28</div>
+                  <div class="daily">29</div>
+                  <div class="daily">30</div>
+                  <div class="daily">31</div>
+                  <div class="daily pastDays">1</div>
+                  <div class="daily pastDays">2</div>
+                </div>
+              </div> <!--End of CALENDAR DIV-->
+
+            </div> <!--End of CONTENT1 DIV-->
+
+            <div id="content2"> <!--Start of CONTENT2 DIV-->
+
+              <div class="float-left" id="dropdown"> <!--Start of DROPDOWN DIV-->
+                <div name="heart" class="dropDownOption borderRight float-left">
+                  <div class="heart"></div>
+                  <div id="heartSubMenu">
+                    <div class="subMenu float-left">Heart Menu 1.1</div>
+                    <div class="subMenu float-left">Heart Menu 1.2</div>
+                    <div class="subMenu float-left">Heart Menu 1.3</div>
+                  </div>
+                </div>
+				
+                <div name="comment" class="dropDownOption borderRight float-left">
+                  <div class="comment"></div>
+                  <div id="commentSubMenu">
+                    <div class="subMenu float-left">Comment Menu 1.1</div>
+                    <div class="subMenu float-left">Comment Menu 1.2</div>
+                  </div>
+                </div>
+				
+                <div name="volume" class="dropDownOption borderRight float-left">
+                  <div class="volume"></div>
+                  <div id="volumeSubMenu">
+                    <div class="subMenu float-left">Volume Menu 1.1</div>
+                    <div class="subMenu float-left">Volume Menu 1.2</div>
+                    <div class="subMenu float-left">Volume Menu 1.3</div>
+                  </div>
+                </div>
+				
+                <div name="radio" class="dropDownOption float-left">
+                  <div class="radio"></div>
+                  <div id="radioSubMenu">
+                    <div class="subMenu float-left">Radio Menu 1.1</div>
+                  </div>
+                </div>
+              </div> <!--End of DROPDOWN DIV-->
+
+              <div class="divSpacer"></div>
+
+              <div class="float-left" id="selectBox"> <!--Start of SELECTBOX DIV-->
+                <div class="Text14Bold searchFilter">
+                  Sort by filter
+                  <div id="filter">&nbsp;</div>
+                </div>
+                <div id="filterOptions">
+                  <div class="filterOption float-left borderBottom">Date</div>
+                  <div class="filterOption float-left borderBottom">Popularity</div>
+                  <div class="filterOption float-left">Price</div>
+                </div>
+              </div> <!--End of SELECTBOX DIV-->
+
+              <div class="divSpacer"></div>
+
+              <div class="float-left" id="slider"> <!--Start of SLIDER DIV-->
+                <div id="mask">
+                  <div class="leftArrow"></div>
+                    <ul class="images">
+                      <li><img src="images/slider1.jpg" /></li>
+                      <li><img src="images/slider2.jpg" /></li>
+                      <li><img src="images/slider3.jpg" /></li>
+                    </ul>
+                  <div class="rightArrow"></div>
+                </div>
+              </div> <!--End of SLIDER DIV-->
+
+            </div> <!--End of CONTENT2 DIV-->
+
+          </div> <!--End of CONTENT DIV-->
+
+        </div> <!--End of BODY CONTAINER DIV-->
+
+      </div> <!--End of MAIN DIV--> 
+    </body>
+</html>
